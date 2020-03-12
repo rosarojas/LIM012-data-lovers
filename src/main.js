@@ -1,5 +1,5 @@
- import { example } from './data.js';
-//  import { card } from './data.js';
+//  import { example } from './data.js';
+ import { card } from './data.js';
 // import data from './data/injuries/injuries.js';
 // import data from './data/lol/lol.js';
 // import data from './data/patient/patient.js';
@@ -29,46 +29,6 @@ const topAtletas = function () {
 }();
 console.log(topAtletas);
 
-const card = (arr) => {
-  arr.forEach((element) => {
-    const info = arrDataAtletas[element];
-    console.log(info);
-    const infokeys = Object.keys(info);
-    console.log(infokeys);
-    const article = document.createElement('article');
-    const divInfo = document.createElement('div');
-    const img = document.createElement('img');
-    img.setAttribute('src', 'foto.png');
-    img.setAttribute('alt', 'foto');
-    for (let i = 0; i < infokeys.length; i++) {
-      const infoValues = info[infokeys[i]];
-      console.log(infoValues);
-      // Array.isArray(infoValues)
-      if (Array.isArray(infoValues)) {
-        infoValues.forEach(element => {
-          const elementKeys = Object.keys(element);
-          for (let i = 0; i < elementKeys.length; i++) {
-            const datos = document.createElement('p');
-            datos.className = 'datos';
-            const textoDatos = document.createTextNode(`${elementKeys[i]}: ${element[elementKeys[i]]}`);
-            datos.appendChild(textoDatos);
-            divInfo.appendChild(datos);
-          }
-        })
-      } else {
-        const datos = document.createElement('p');
-        const textoDatos = document.createTextNode(`${infokeys[i]}: ${infoValues}`);
-        datos.appendChild(textoDatos);
-        divInfo.appendChild(datos);
-      }
-    }
-    const main = document.getElementsByTagName('main')[0];
-    article.appendChild(img);
-    article.appendChild(divInfo);
-    main.appendChild(article);
-  }
-  )
-}
-
-card(topAtletas);
-//  console.log(example, data);
+const usuarios = topAtletas.map(indice => arrDataAtletas[indice]);
+card(usuarios);
+ console.log(card);
