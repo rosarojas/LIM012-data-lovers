@@ -1,9 +1,17 @@
-// estas funciones son de ejemplo
+const filterYear = () => {
+  
+};
 
-export const example = () => {
+const anotherExample = () => {
+  return 'OMG';
+};
+ const example = () => {
   return 'example';
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+export {example, anotherExample};
+
+
+// export const anotherExample = () => {
+//   return 'OMG';
+// };

@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div id="menu">
+    <p>Encuentra a los Atletas del 2016</p>
+    <div><input type="text" placeholder="Search">
+      <button type="submit" id="searcher"><i class="fa fa-search"></i></button>
+    </div>
+    <p>MEDALLAS</p>
+    <P id="line"></P>
+    <ul>
+      <li><input type="radio" name="medallas">Oro</li>
+      <li><input type="radio" name="medallas">Plata</li>
+      <li><input type="radio" name="medallas">Bronce</li>
+    </ul>
+    <button class="filtrosdyp">DEPORTES &#9658</button>
+    <button class="filtrosdyp">PAISES &#9658</button>
+  </div>
+  <div id="contenedor">
+    <header>WIKIATLETAS</header>
+    <button id="ordenador">ORDENAR</button>
+    <main id="main"></main> 
+  </div>
+  <div id="root"></div>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
