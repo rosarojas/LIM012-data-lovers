@@ -1,8 +1,9 @@
 //  import { example } from './data.js';
- import { card } from './data.js';
+import { card } from './data.js';
 // import data from './data/injuries/injuries.js';
 // import data from './data/lol/lol.js';
 // import data from './data/patient/patient.js';
+import { ordenar } from './data.js';
 import data from './data/atletas/atletas.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 // import data from './data/steam/steam.js';
@@ -30,5 +31,10 @@ const topAtletas = function () {
 console.log(topAtletas);
 
 const usuarios = topAtletas.map(indice => arrDataAtletas[indice]);
+//Funcion para ordenar de A - Z
+ordenar(usuarios, name);
+//Funcion para ordenar Z - A
+// ordenInverso(usuarios, name);
+// console.log(ordenInverso);
+//Funcion mostrar data
 card(usuarios);
- console.log(card);

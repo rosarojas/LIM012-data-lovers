@@ -1,5 +1,5 @@
 const filterYear = () => {
-  
+
 };
  const example = () => {
   return 'example';
@@ -40,8 +40,36 @@ const card = (arr) => {
   }
   )
 }
-
 export {card};
+
+//Ordena de  A - Z
+const ordenar = (data, name) => {
+  data.sort((previo, siguiente) => {
+    if (previo.name > siguiente.name) {
+      return 1;
+    } else if (previo.name < siguiente.name) {
+      return -1;
+    } else {
+      return 0;
+    }
+  })
+};
+export {ordenar};
+
+ //Ordena de Z - A
+// const ordenInverso = (dataInversa, name) => dataInversa.sort((previo, siguiente) => {
+//   if (previo.name > siguiente.name) {
+//     return -1;
+//   } else if (previo.name < siguiente.name) {
+//     return 1;
+//   } else {
+//     return 0;
+//   }
+// })
+// export ordenInverso;
+// export const anotherExample = () => {
+//   return 'OMG';
+// };
 
 
 // export const anotherExample = () => {
