@@ -33,3 +33,7 @@ ordenador.addEventListener('click', () => {
 // console.log(ordenInverso);
 // Funcion mostrar data;
 card(usuarios);
+const deportesTotal = atletas2016.map((atleta) => atleta.disciplinas[0].disciplina);
+console.log(deportesTotal);
+const deportes = deportesTotal.filter((value, index, self) => self.indexOf(value) === index);
+console.log(deportes);
