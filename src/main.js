@@ -23,7 +23,11 @@ console.log(topAtletas);
 
 const usuarios = topAtletas.map((indice) => arrDataAtletas[indice]);
 // Funcion para ordenar de A - Z
-ordenar(usuarios, name);
+const ordenador = document.getElementById('ordenador');
+ordenador.addEventListener('click', () => {
+  ordenar(usuarios);
+  card(usuarios);
+});
 // Funcion para ordenar Z - A
 // ordenInverso(usuarios, name);
 // console.log(ordenInverso);

@@ -31,10 +31,6 @@ position: fixed;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .datos{
-        font-size: 3vh;
-        line-height: 1vh;
-    }
     article{
         display: flex;
         flex-direction: row;
