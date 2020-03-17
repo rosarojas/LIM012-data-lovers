@@ -35,15 +35,16 @@ const ordenar = (data) => {
     }
   });
 };
-export {card, ordenar};
 // Ordena de Z - A
-// const ordenInverso = (dataInversa, name) => dataInversa.sort((previo, siguiente) => {
-//   if (previo.name > siguiente.name) {
-//     return -1;
-//   } else if (previo.name < siguiente.name) {
-//     return 1;
-//   } else {
-//     return 0;
-//   }
-// })
-// export ordenInverso;S
+const ordenInverso = (dataInversa) => {
+  dataInversa.sort((previo, siguiente) => {
+  if (previo.name > siguiente.name) {
+    return -1;
+  } else if (previo.name < siguiente.name) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
+};
+export {card, ordenar, ordenInverso};

@@ -3,14 +3,14 @@ describe('ordenar', () => {
   it('is a function', () => {
     expect(typeof ordenar).toBe('function');
   });
-  it('returns `example`', () => {
+  it('returns ordenar', () => {
     expect(ordenar([
       {
         'name': 'Paola Bisiani'
       },
       {
         'name': 'Nataliya Andrivna Burdeina'
-      }])).toBe(
+      }])).toEqual(
         [
           {
             'name': 'Nataliya Andrivna Burdeina'
@@ -21,11 +21,3 @@ describe('ordenar', () => {
     );
   });
 });
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
