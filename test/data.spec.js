@@ -3,14 +3,14 @@ describe('ordenar', () => {
   it('is a function', () => {
     expect(typeof ordenar).toBe('function');
   });
-  it('returns ordenar', () => {
+  it('returns `example`', () => {
     expect(ordenar([
       {
         'name': 'Paola Bisiani'
       },
       {
         'name': 'Nataliya Andrivna Burdeina'
-      }])).toEqual(
+      }])).toBe(
         [
           {
             'name': 'Nataliya Andrivna Burdeina'

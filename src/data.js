@@ -38,27 +38,13 @@ const ordenar = (data) => {
 // Ordena de Z - A
 const ordenInverso = (dataInversa) => {
   dataInversa.sort((previo, siguiente) => {
-  if (previo.name > siguiente.name) {
-    return -1;
-  } else if (previo.name < siguiente.name) {
-    return 1;
-  } else {
-    return 0;
-  }
-});
+    if (previo.name > siguiente.name) {
+      return -1;
+    } else if (previo.name < siguiente.name) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 };
-
-// const plata2016 = (array) => array.forEach((elemento) => {
-
-//   let silver = 0;
-//   elemento.disciplinas.forEach((disciplina) => {
-//     if (disciplina.medalla === 'Silver') {  
-//       silver++;
-//     }
-//   });
-//   if(silver > 0) {
-//     const atletasPlata = elemento;
-
-//   }
-// });
 export {card, ordenar, ordenInverso};

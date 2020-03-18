@@ -21,6 +21,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.1.2",
     "htmlhint": "^0.11.0",
+    "jest": "^24.8.0",
     "regenerator-runtime": "^0.13.1",
     "serve": "^11.0.2",
     "stylelint": "^10.1.0",
@@ -31,6 +32,5 @@
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-jest": "^23.8.1",
-    "jest": "^24.9.0"
   }
 }

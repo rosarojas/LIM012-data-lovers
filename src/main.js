@@ -1,8 +1,12 @@
 import {card, ordenar, ordenInverso} from './data.js';
 import data from './data/atletas/atletas.js';
 const arrDataAtletas = data.atletas;
-const arrDisciplinas = arrDataAtletas.filter((atleta) => atleta.hasOwnProperty('disciplinas'));
-const atletas2016 = arrDisciplinas.filter((listaAtletas) => listaAtletas.disciplinas[0].año === 2016);
+const arrDisciplinas = arrDataAtletas.filter((atleta) => {
+  atleta.hasOwnProperty('disciplinas');
+});
+const atletas2016 = arrDisciplinas.filter((listaAtletas) => {
+  listaAtletas.disciplinas[0].año === 2016;
+});
 const topAtletas = function top() {
   const topA = [];
   atletas2016.forEach((perfil, index) => {
@@ -20,8 +24,9 @@ const topAtletas = function top() {
 }();
 const usuarios = topAtletas.map((indice) => arrDataAtletas[indice]);
 card(usuarios);
-const selector = document.querySelector('.ordenAlfabetico');
-const resultado = document.querySelector('#main');
+// Boton select
+const selector = document.querySelector('#ordenador');
+document.querySelector('#main');
 selector.addEventListener('change', (event) => {
   if ((event.target.value === 'ordenAZ')) {
     ordenar(usuarios);
