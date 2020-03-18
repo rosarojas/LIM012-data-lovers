@@ -32,21 +32,6 @@ selector.addEventListener('change', (event) => {
   }
 });
 // Lista de países
-// function paises() {
-// const listaPaisesRepetidos = arrDisciplinas.map((listaAtletas) => listaAtletas.team);
-// const listaPaises = listaPaisesRepetidos.filter((elemento, indiceActual, array) => array.indexOf(elemento) === indiceActual);
-// const datos = listaPaises.sort();
-// addOptions("paises", datos);
-// }
-// function addOptions(domElement, datos) {
-//     var selector = document.getElementsByName(domElement)[0];
-//     //Recorremos el array.
-//     for (paises in datos) {
-//         var opcion = document.createElement("option");
-//         opcion.text = datos[paises];
-//         selector.add(opcion);
-//     }
-// }
-// window.addEventListener("load", function() {
-//     paises(event);
-// }, false);
+  const listaPaisesRepetidos = arrDisciplinas.map((listaAtletas) => listaAtletas.team);
+  const listaPaises = listaPaisesRepetidos.filter((elemento, indiceActual, array) => array.indexOf(elemento) === indiceActual);
+  const menuPaises = listaPaises.sort();
