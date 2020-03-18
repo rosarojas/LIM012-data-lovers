@@ -2,18 +2,18 @@ module.exports = {
     'env': {
         'browser': true,
         'es6': true,
-      },
-      'extends': [
+    },
+    'extends': [
         'google',
-      ],
-      'globals': {
+    ],
+    'globals': {
         'Atomics': 'readonly',
         'SharedArrayBuffer': 'readonly',
-      },
-      'parserOptions': {
+    },
+    'parserOptions': {
         'ecmaVersion': 2018,
         'sourceType': 'module',
-      },
-      'rules': {
-      },
-    };
+    },
+    'rules': {
+    },
+};

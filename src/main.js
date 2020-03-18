@@ -1,12 +1,8 @@
 import {card, ordenar, ordenInverso} from './data.js';
 import data from './data/atletas/atletas.js';
 const arrDataAtletas = data.atletas;
-const arrDisciplinas = arrDataAtletas.filter((atleta) => {
-  atleta.hasOwnProperty('disciplinas');
-});
-const atletas2016 = arrDisciplinas.filter((listaAtletas) => {
-  listaAtletas.disciplinas[0].año === 2016;
-});
+const arrDisciplinas = arrDataAtletas.filter((atleta) => atleta.hasOwnProperty('disciplinas'));
+const atletas2016 = arrDisciplinas.filter((listaAtletas) => listaAtletas.disciplinas[0].año === 2016);
 const topAtletas = function top() {
   const topA = [];
   atletas2016.forEach((perfil, index) => {
@@ -37,6 +33,11 @@ selector.addEventListener('change', (event) => {
   }
 });
 // Lista de países
-  const listaPaisesRepetidos = arrDisciplinas.map((listaAtletas) => listaAtletas.team);
-  const listaPaises = listaPaisesRepetidos.filter((elemento, indiceActual, array) => array.indexOf(elemento) === indiceActual);
-  const menuPaises = listaPaises.sort();
+const listaPaisesRepetidos = arrDisciplinas.map((listaAtletas) => {
+  listaAtletas.team;
+});
+const listaPaises = listaPaisesRepetidos.filter(
+    (elemento, indiceActual, array) => {
+      array.indexOf(elemento) === indiceActual;
+    });
+const menuPaises = listaPaises.sort();
