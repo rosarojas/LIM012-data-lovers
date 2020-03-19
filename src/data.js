@@ -14,7 +14,7 @@ const card = (arr) => {
           }
         });
       } else {
-         info += `<p>${infokeys[i]}: ${infoValues} </p>`;
+        info += `<p>${infokeys[i]}: ${infoValues} </p>`;
       }
     }
     article +=`<article>${img} <div>${info}</div> </article>`;

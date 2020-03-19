@@ -11,10 +11,12 @@
 <body>
 
   <div id="menu">
+    <!-- Buscador por nombre de atleta -->
     <p>Encuentra a los Atletas del 2016</p>
     <div><input type="text" placeholder="Search">
       <button type="submit" id="searcher"><i class="fa fa-search"></i></button>
     </div>
+    <!-- Filtro por medallas  -->
     <p>MEDALLAS</p>
     <p id="line"></p>
     <ul>
@@ -22,12 +24,17 @@
       <li><input type="radio" name="medallas" class="plata">Plata</li>
       <li><input type="radio" name="medallas" class="bronce">Bronce</li>
     </ul>
+    <!-- Filtro por deportes -->
     <button class="filtrosdyp">DEPORTES &#9658</button>
-    <select id="paises" name="paises"></select>
+    <!-- Filtro por paises -->
+    <select id="paises" name="paises">
+      <option value="">Países</option>
+    </select>
   </div>
   <div id="contenedor">
     <header>WIKIATLETAS</header>
-      <select class="ordenador">
+      <!-- Boton de ordenar -->
+      <select id="ordenador">
         <option value="">Ordenar</option>
         <option value="ordenAZ">A-Z</option>
         <option value="ordenZA">Z-A</option>
