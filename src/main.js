@@ -2,9 +2,10 @@ import {card, ordenar, ordenInverso} from './data.js';
 import data from './data/atletas/atletas.js';
 // Filtrar por disciplinas
 const arrDataAtletas = data.atletas;
-const arrDisciplinas = arrDataAtletas.filter((atleta) => atleta.hasOwnProperty('disciplinas'));
-const atletas2016 = arrDisciplinas.filter((listaAtletas) => listaAtletas.disciplinas[0].año === 2016);
-// Funcion para top atletas de oro
+const arrDisciplinas = arrDataAtletas.filter((atleta) =>
+  (atleta.hasOwnProperty('disciplinas')));
+const atletas2016 = arrDisciplinas.filter((listaAtletas) =>
+  (listaAtletas.disciplinas[0].año === 2016));
 const topAtletas = function top() {
   const topA = [];
   atletas2016.forEach((perfil, index) => {
@@ -22,8 +23,7 @@ const topAtletas = function top() {
 }();
 // Top 12 de atletas de oro
 const usuarios = topAtletas.map((indice) => arrDataAtletas[indice]);
-// Funcion para mostrar datos
-card(usuarios);
+main.innerHTML = card(usuarios);
 // Boton select
 const selector = document.querySelector('#ordenador');
 selector.addEventListener('change', (event) => {
