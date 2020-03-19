@@ -73,5 +73,28 @@ const card = (arr) => {
   });
   return mainDiv;
 };
-
-export {card, ordenar};
+const ordenar = (data) => {
+  const resultado = data.sort((previo, siguiente) => {
+    if (previo.name > siguiente.name) {
+      return 1;
+    } else if (previo.name < siguiente.name) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return resultado;
+};
+const ordenInverso = (dataInversa) => {
+  const resultado = dataInversa.sort((previo, siguiente) => {
+    if (previo.name > siguiente.name) {
+      return -1;
+    } else if (previo.name < siguiente.name) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return resultado;
+};
+export {card, ordenar, ordenInverso};
