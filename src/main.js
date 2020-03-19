@@ -1,8 +1,12 @@
 import {card, ordenar, ordenInverso} from './data.js';
 import data from './data/atletas/atletas.js';
 const arrDataAtletas = data.atletas;
-const arrDisciplinas = arrDataAtletas.filter((atleta) => atleta.hasOwnProperty('disciplinas'));
-const atletas2016 = arrDisciplinas.filter((listaAtletas) => listaAtletas.disciplinas[0].año === 2016);
+const arrDisciplinas = arrDataAtletas.filter((atleta) =>
+  (atleta.hasOwnProperty('disciplinas')));
+const atletas2016 = arrDisciplinas.filter((listaAtletas) =>
+  (listaAtletas.disciplinas[0].año === 2016));
+console.log(atletas2016);
+
 const topAtletas = function top() {
   const topA = [];
   atletas2016.forEach((perfil, index) => {
@@ -19,7 +23,6 @@ const topAtletas = function top() {
   return topA;
 }();
 const usuarios = topAtletas.map((indice) => arrDataAtletas[indice]);
-card(usuarios);
 // Boton select
 const selector = document.querySelector('#ordenador');
 document.querySelector('#main');
@@ -41,3 +44,11 @@ const listaPaises = listaPaisesRepetidos.filter(
       array.indexOf(elemento) === indiceActual;
     });
 const menuPaises = listaPaises.sort();
+
+main.innerHTML = card(usuarios);
+const deportesTotal = atletas2016.map((atleta) =>
+  (atleta.disciplinas[0].disciplina));
+console.log(deportesTotal);
+const deportes = deportesTotal.filter((value, index, self) =>
+  (self.indexOf(value) === index));
+console.log(deportes);
