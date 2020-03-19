@@ -1,4 +1,4 @@
-import {card, ordenar, ordenInverso} from './data.js';
+import {card, ordenar} from './data.js';
 import data from './data/atletas/atletas.js';
 // Filtrar por disciplinas
 const arrDataAtletas = data.atletas;
@@ -38,27 +38,31 @@ main.appendChild(card(usuarios));
 // Boton select
 const selector = document.querySelector('#ordenador');
 selector.addEventListener('change', (event) => {
-  if ((event.target.value === 'ordenAZ')) {
-    ordenar(usuarios);
-    main.innerHTML= '';
-    main.appendChild(card(usuarios));
-  } else if ((event.target.value === 'ordenZA')) {
-    ordenInverso(usuarios);
-    main.innerHTML= '';
-    main.appendChild(card(usuarios));
-  }
+  main.innerHTML= '';
+  ordenar(usuarios, event.target.value);
+  main.appendChild(card(usuarios));
 });
 // Lista de países en select
 const listaPaisesRepetidos = atletas2016.map((paises) => paises.team);
 const listaPaises = listaPaisesRepetidos.filter((elemento, indice, array) =>
   array.indexOf(elemento) === indice);
+const selectPais = document.querySelector('#paises');
 const paises = () => {
-  const selectPais = document.querySelector('#paises');
   const paisesOrdenados = listaPaises.sort();
   paisesOrdenados.forEach((pais) => {
     const opcion = document.createElement('option');
     opcion.textContent = pais;
+    opcion.setAttribute('value', pais);
     selectPais.appendChild(opcion);
   });
 };
 paises();
+const team = (pais) => {
+  const resultado = atletas2016.filter((atleta) =>
+    (atleta.team === pais));
+  return resultado;
+};
+selectPais.addEventListener('change', (event) => {
+  main.innerHTML= '';
+  main.appendChild(card(team(event.target.value)));
+});
