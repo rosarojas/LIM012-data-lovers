@@ -36,7 +36,16 @@ position: fixed;
         flex-direction: column;
         align-items: center;
         border: solid red;
+        border-bottom: 5vh;
         width: 110vh;
+    }
+    .ocultar{
+        display: none;
+    }
+    .verMas, #verMenos{
+        font-size: 5vh;
+        border-radius: 5vh;
+        width: 7vh;
     }
     img{
         width: 36vh;
@@ -55,8 +64,6 @@ position: fixed;
 
     }
     input[type = radio]{
-        -webkit-appearance: checkbox;
-        -moz-appearance: checkbox;
         width: 4vh;
         height: 4vh;
     }
@@ -81,15 +88,4 @@ position: fixed;
         border: solid black 1px;
         width: 36vh;
         margin-top: 0.5vh;
-    }
-    .filtrosdyp{
-        width: 48vh;
-        height: 8vh;
-    }
-    #ordenador{
-        width: 20vh;
-        height: 5vh;
-        margin-left: 110vh;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
     }

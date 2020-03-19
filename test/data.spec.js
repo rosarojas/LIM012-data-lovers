@@ -1,4 +1,4 @@
-import {ordenar, card} from '../src/data.js';
+import {ordenar} from '../src/data.js';
 describe('ordenar', () => {
   it('is a function', () => {
     expect(typeof ordenar).toBe('function');
@@ -39,13 +39,26 @@ describe('card', () => {
     expect(card([
       {
         'name': 'Paola Bisiani',
-      },
-      {
-        'name': 'Nataliya',
-      }])).toBe('<article><img src=\"foto.png\" alt=\"foto\"> '+
-      '<div><p>name: Paola Bisiani </p></div> </article>' +
-      '<article><img src=\"foto.png\" alt=\"foto\"> '+
-      '<div><p>name: Nataliya </p></div> </article>');
+        'disciplinas': [
+          {
+            'disciplina': 'Archery Team',
+          }]}])).toBe(
+        // <div>
+        //   <article>
+        //     <img src="foto.png" alt="foto">
+        //       <div>
+        //         <p>Paola Bisiani</p>
+        //         <p>Archery Team</p>
+        //       </div>
+        //       <button class="verMas">+</button>
+        //       <div id="divInfo0" class="ocultar">
+        //         <p>name: Paola Bisiani</p>
+        //         <p class="datos">disciplina: Archery Team</p>
+        //       </div>
+        //       <button class="ocultar" id="verMenos">-</button>
+        //   </article>
+        // </div>
+    );
   });
   it('returns `card`', () => {
     expect(card([
@@ -59,10 +72,10 @@ describe('card', () => {
             'correr': 'Archery Team',
           },
         ],
-      }])).toBe('<article><img src=\"foto.png\" alt=\"foto\"> '+
-      '<div><p>name: Paola Bisiani </p></div> </article>' +
-      '<article><img src=\"foto.png\" alt=\"foto\"> '+
-      '<div><p>name: Nataliya </p><p>correr: '+
-      'Archery Team </p></div> </article>');
+      }])).toBe('<article><img src=\"foto.png\" alt=\"foto\"> ' +
+                '<div><p>name: Paola Bisiani </p></div> </article>' +
+                '<article><img src=\"foto.png\" alt=\"foto\"> ' +
+                '<div><p>name: Nataliya </p><p>correr: ' +
+                'Archery Team </p></div> </article>');
   });
 });
