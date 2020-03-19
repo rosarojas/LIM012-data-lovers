@@ -1,11 +1,11 @@
-import {card, ordenar} from './data.js';
+import {card, ordenar, ordenInverso} from './data.js';
 import data from './data/atletas/atletas.js';
+// Filtrar por disciplinas
 const arrDataAtletas = data.atletas;
 const arrDisciplinas = arrDataAtletas.filter((atleta) =>
   (atleta.hasOwnProperty('disciplinas')));
 const atletas2016 = arrDisciplinas.filter((listaAtletas) =>
   (listaAtletas.disciplinas[0].año === 2016));
-console.log(atletas2016);
 const topAtletas = function top() {
   const topA = [];
   atletas2016.forEach((perfil, index) => {
@@ -21,25 +21,30 @@ const topAtletas = function top() {
   });
   return topA;
 }();
-console.log(topAtletas);
-
+// Top 12 de atletas de oro
 const usuarios = topAtletas.map((indice) => arrDataAtletas[indice]);
-console.log(usuarios);
-// Funcion para ordenar de A - Z
-const main = document.getElementsByTagName('main')[0];
-const ordenador = document.getElementById('ordenador');
-ordenador.addEventListener('click', () => {
-  ordenar(usuarios);
-  main.innerHTML = card(usuarios);
-});
-// Funcion para ordenar Z - A
-// ordenInverso(usuarios, name);
-// console.log(ordenInverso);
-// Funcion mostrar data;
 main.innerHTML = card(usuarios);
-const deportesTotal = atletas2016.map((atleta) =>
-  (atleta.disciplinas[0].disciplina));
-console.log(deportesTotal);
-const deportes = deportesTotal.filter((value, index, self) =>
-  (self.indexOf(value) === index));
-console.log(deportes);
+// Boton select
+const selector = document.querySelector('#ordenador');
+selector.addEventListener('change', (event) => {
+  if ((event.target.value === 'ordenAZ')) {
+    ordenar(usuarios);
+    card(usuarios);
+  } else if ((event.target.value === 'ordenZA')) {
+    ordenInverso(usuarios);
+    card(usuarios);
+  }
+});
+// Lista de países en select
+const listaPaisesRepetidos = atletas2016.map((paises) => paises.team);
+const listaPaises = listaPaisesRepetidos.filter((elemento, indice, array) =>
+  array.indexOf(elemento) === indice);
+const paises = () => {
+  const selectPais = document.querySelector('#paises');
+  const paisesOrdenados = listaPaises.sort();
+  paisesOrdenados.forEach((pais) => {
+    const opcion = document.createElement('option');
+    opcion.textContent = pais;
+    selectPais.appendChild(opcion);
+  })};
+paises();
