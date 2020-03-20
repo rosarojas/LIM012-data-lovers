@@ -74,28 +74,19 @@ const card = (arr) => {
   return mainDiv;
 };
 const ordenar = (data, orden) => {
-  let resultado;
+  const resultado = data.sort((previo, siguiente) => {
+    if (previo.name > siguiente.name) {
+      return 1;
+    } else if (previo.name < siguiente.name) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
   if (orden === 'A-Z') {
-    resultado = data.sort((previo, siguiente) => {
-      if (previo.name > siguiente.name) {
-        return 1;
-      } else if (previo.name < siguiente.name) {
-        return -1;
-      } else {
-        return 0;
-      }
-    });
+    return resultado;
   } else if ( orden === 'Z-A') {
-    resultado = data.sort((previo, siguiente) => {
-      if (previo.name > siguiente.name) {
-        return -1;
-      } else if (previo.name < siguiente.name) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
+    return resultado.reverse();
   };
-  return resultado;
 };
 export {card, ordenar};

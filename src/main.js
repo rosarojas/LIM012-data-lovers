@@ -66,3 +66,43 @@ selectPais.addEventListener('change', (event) => {
   main.innerHTML= '';
   main.appendChild(card(team(event.target.value)));
 });
+// Lista de diciplinas en select
+const listaDisciplinasArr = atletas2016.map((atleta) =>
+  (atleta.disciplinas));
+console.log(listaDisciplinasArr);
+
+const listaDisciplinasFuncion = () => {
+  const result = [];
+  listaDisciplinasArr.forEach((arr) => {
+    arr.forEach((obj) => {
+      result.push(obj.disciplina);
+    });
+  });
+  return result;
+};
+const listaDisciplinasRepetidas = listaDisciplinasFuncion();
+const listaDisciplinas = listaDisciplinasRepetidas.filter(
+    (elemento, indice, array) =>
+      (array.indexOf(elemento) === indice));
+const selectDisciplina = document.querySelector('#disciplinas');
+const disciplinas = () => {
+  const disciplinasOrdenadas = listaDisciplinas.sort();
+  disciplinasOrdenadas.forEach((disciplina) => {
+    const opcion = document.createElement('option');
+    opcion.textContent = disciplina;
+    opcion.setAttribute('value', disciplina);
+    selectDisciplina.appendChild(opcion);
+  });
+};
+disciplinas();
+
+const disciplina = (deporte) => {
+  const resultado = atletas2016.filter((atleta) =>
+    (atleta.disciplinas.some((objeto) =>
+      (objeto.disciplina === deporte))));
+  return resultado;
+};
+selectDisciplina.addEventListener('change', (event) => {
+  main.innerHTML= '';
+  main.appendChild(card(disciplina(event.target.value)));
+});
