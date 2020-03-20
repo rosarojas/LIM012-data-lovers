@@ -3,6 +3,7 @@ const card = (arr) => {
   arr.forEach((element, index) => {
     const infokeys = Object.keys(element);
     const article = document.createElement('article');
+    article.setAttribute('id', index);
     const img = document.createElement('img');
     img.setAttribute('src', 'foto.png');
     img.setAttribute('alt', 'foto');

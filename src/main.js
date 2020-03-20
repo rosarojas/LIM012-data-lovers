@@ -1,3 +1,4 @@
+
 import {card, ordenar} from './data.js';
 import data from './data/atletas/atletas.js';
 // Filtrar por disciplinas
@@ -23,7 +24,7 @@ const topAtletas = function top() {
   return topA;
 }();
 // console.log(topAtletas);
-const usuarios = topAtletas.map((indice) => arrDataAtletas[indice]);
+const usuarios = topAtletas.map((indice) => atletas2016[indice]);
 console.log(usuarios);
 const main = document.getElementsByTagName('main')[0];
 main.appendChild(card(usuarios));
@@ -105,4 +106,21 @@ const disciplina = (deporte) => {
 selectDisciplina.addEventListener('change', (event) => {
   main.innerHTML= '';
   main.appendChild(card(disciplina(event.target.value)));
+});
+//  funcionalidad a botones medalla
+
+const medallas = (medalla) => {
+  const result = atletas2016.filter((atleta) =>
+    (atleta.disciplinas.some((disciplina) =>
+      (disciplina.medalla === medalla))));
+  return result;
+};
+
+const botonesMedalla = document.getElementsByName('medallas');
+console.log(botonesMedalla);
+botonesMedalla.forEach((boton) => {
+  boton.addEventListener('click', () => {
+    main.innerHTML= '';
+    main.appendChild(card(medallas(boton.value)));
+  });
 });
