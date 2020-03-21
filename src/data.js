@@ -23,7 +23,7 @@ const card = (arr) => {
     verMas.appendChild(textoVermas);
     const divInfo = document.createElement('div');
     divInfo.id = `divInfo${index}`;
-    divInfo.className= 'ocultar';
+    divInfo.className = 'ocultar';
     const verMenos = document.createElement('button');
     verMenos.setAttribute('class', 'ocultar');
     verMenos.setAttribute('id', 'verMenos');
@@ -86,8 +86,26 @@ const ordenar = (data, orden) => {
   });
   if (orden === 'A-Z') {
     return resultado;
-  } else if ( orden === 'Z-A') {
+  } else if (orden === 'Z-A') {
     return resultado.reverse();
   };
 };
-export {card, ordenar};
+const filterData = (data, filtro, filterBy) => {
+  if (filtro === 'disciplinas') {
+    const resultado = data.filter((atleta) =>
+      (atleta[filtro].some((objeto) =>
+        (objeto.disciplina === filterBy))));
+    return resultado;
+  } else if (filtro === 'team') {
+    const resultado = data.filter((atleta) =>
+      (atleta[filtro] === filterBy));
+    return resultado;
+  } else if (filtro === 'medalla') {
+    const result = data.filter((atleta) =>
+      (atleta.disciplinas.some((disciplina) =>
+        (disciplina[filtro] === filterBy))));
+    return result;
+  };
+};
+
+export {card, ordenar, filterData};

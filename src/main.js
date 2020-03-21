@@ -1,5 +1,5 @@
 
-import {card, ordenar} from './data.js';
+import {card, ordenar, filterData} from './data.js';
 import data from './data/atletas/atletas.js';
 // Filtrar por disciplinas
 const arrDataAtletas = data.atletas;
@@ -8,7 +8,6 @@ const arrDisciplinas = arrDataAtletas.filter((atleta) =>
 const atletas2016 = arrDisciplinas.filter((listaAtletas) =>
   (listaAtletas.disciplinas[0].año === 2016));
 const topAtletas = function top() {
-  // debugger;
   const topA = [];
   atletas2016.forEach((perfil, index) => {
     let gold = 0;
@@ -23,20 +22,10 @@ const topAtletas = function top() {
   });
   return topA;
 }();
-// console.log(topAtletas);
 const usuarios = topAtletas.map((indice) => atletas2016[indice]);
-console.log(usuarios);
 const main = document.getElementsByTagName('main')[0];
 main.appendChild(card(usuarios));
-// console.log(card([
-//   {
-//     'name': 'Paola Bisiani',
-//     'disciplinas': [
-//       {
-//         'disciplina': 'Archery Team',
-//       }]}]));
-
-// Boton select
+// funcionalidad boton ordenar
 const selector = document.querySelector('#ordenador');
 selector.addEventListener('change', (event) => {
   main.innerHTML= '';
@@ -48,7 +37,7 @@ const listaPaisesRepetidos = atletas2016.map((paises) => paises.team);
 const listaPaises = listaPaisesRepetidos.filter((elemento, indice, array) =>
   array.indexOf(elemento) === indice);
 const selectPais = document.querySelector('#paises');
-const paises = () => {
+const paisesSelect = () => {
   const paisesOrdenados = listaPaises.sort();
   paisesOrdenados.forEach((pais) => {
     const opcion = document.createElement('option');
@@ -57,21 +46,16 @@ const paises = () => {
     selectPais.appendChild(opcion);
   });
 };
-paises();
-const team = (pais) => {
-  const resultado = atletas2016.filter((atleta) =>
-    (atleta.team === pais));
-  return resultado;
-};
+paisesSelect();
+// funcionalidad select pais
 selectPais.addEventListener('change', (event) => {
+  const resultado = filterData(atletas2016, 'team', event.target.value);
   main.innerHTML= '';
-  main.appendChild(card(team(event.target.value)));
+  main.appendChild(card(resultado));
 });
 // Lista de diciplinas en select
 const listaDisciplinasArr = atletas2016.map((atleta) =>
   (atleta.disciplinas));
-console.log(listaDisciplinasArr);
-
 const listaDisciplinasFuncion = () => {
   const result = [];
   listaDisciplinasArr.forEach((arr) => {
@@ -85,6 +69,7 @@ const listaDisciplinasRepetidas = listaDisciplinasFuncion();
 const listaDisciplinas = listaDisciplinasRepetidas.filter(
     (elemento, indice, array) =>
       (array.indexOf(elemento) === indice));
+// funcionalidad select disciplinas
 const selectDisciplina = document.querySelector('#disciplinas');
 const disciplinas = () => {
   const disciplinasOrdenadas = listaDisciplinas.sort();
@@ -96,31 +81,24 @@ const disciplinas = () => {
   });
 };
 disciplinas();
-
-const disciplina = (deporte) => {
-  const resultado = atletas2016.filter((atleta) =>
-    (atleta.disciplinas.some((objeto) =>
-      (objeto.disciplina === deporte))));
-  return resultado;
-};
 selectDisciplina.addEventListener('change', (event) => {
+  const resultado = filterData(atletas2016, 'disciplinas', event.target.value);
   main.innerHTML= '';
-  main.appendChild(card(disciplina(event.target.value)));
+  main.appendChild(card(resultado));
 });
-//  funcionalidad a botones medalla
-
-const medallas = (medalla) => {
-  const result = atletas2016.filter((atleta) =>
-    (atleta.disciplinas.some((disciplina) =>
-      (disciplina.medalla === medalla))));
-  return result;
-};
-
-const botonesMedalla = document.getElementsByName('medallas');
-console.log(botonesMedalla);
+// funcionalidad botoes medallas
+const botonesMedalla = document.getElementsByName('medalla');
 botonesMedalla.forEach((boton) => {
   boton.addEventListener('click', () => {
+    const resultado = filterData(atletas2016, 'medalla', boton.value);
     main.innerHTML= '';
-    main.appendChild(card(medallas(boton.value)));
+    main.appendChild(card(resultado));
   });
 });
+// console.log(card([
+//   {
+//     'name': 'Paola Bisiani',
+//     'disciplinas': [
+//       {
+//         'disciplina': 'Archery Team',
+//       }]}]));
