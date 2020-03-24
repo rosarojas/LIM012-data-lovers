@@ -11,9 +11,12 @@
 <body>
   <div id="menu">
     <!-- Buscador por nombre de atleta -->
-    <p>Encuentra a los Atletas del 2016</p>
-    <div><input type="text" placeholder="Search">
+    <h2>Encuentra a los Atletas del 2016</h2>
+    <div>
+      <input type="text" id="search" placeholder="Search">
       <button type="submit" id="searcher"><i class="fa fa-search"></i></button>
+      <div id="coincidencias">
+      </div>
     </div>
     <!-- Filtro por medallas  -->
     <p>MEDALLAS</p>
@@ -25,11 +28,11 @@
     </ul>
     <!-- Filtro por deportes -->
     <select id="disciplinas" name="disciplinas">
-      <option value="">Disciplinas</option>
+      <option value="Disciplinas">Disciplinas</option>
     </select>
     <!-- Filtro por paises -->
     <select id="paises" name="paises">
-      <option value="">Países</option>
+      <option value="Paises">Países</option>
     </select>
   </div>
   <div id="contenedor">
@@ -41,8 +44,10 @@
         <option value="Z-A">Z-A</option>
       </select>
       <main id="main"></main>
+      <canvas id="myChart"></canvas>
   </div>
   <div id="root"></div>
   <script src="main.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 </body>
 </html>

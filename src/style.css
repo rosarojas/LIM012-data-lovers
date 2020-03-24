@@ -67,10 +67,26 @@ position: fixed;
         width: 4vh;
         height: 4vh;
     }
-    #menu p:first-child{
+     h2{
         font-size: 4vh;
         text-align: center;
-    }
+        font-weight: lighter;
+    } 
+    .coincidenciasEstilo{
+        border: solid 0.1vh rgb(83, 79, 79);
+        background-color: white;
+        position: absolute;
+        max-height: 30vh;
+        width: 18vw;
+        overflow: auto;
+    } 
+    #coincidencias p {
+        font-size: 3vh;
+        padding: 0.8vh;
+        margin: 1vh;
+        margin-left: 0vh;
+        margin-right: 0vh;
+    } 
     #menu div{
         margin-top: 2vh;
         margin-bottom: 4vh;
@@ -89,3 +105,8 @@ position: fixed;
         width: 36vh;
         margin-top: 0.5vh;
     }
+    #myChart{
+        width:"30vw" ;
+        height:"30vh";
+    }
+    
