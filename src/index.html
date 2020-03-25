@@ -6,46 +6,51 @@
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/866f260442.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-  <div id="menu">
-    <!-- Buscador por nombre de atleta -->
-    <h2>Encuentra a los Atletas del 2016</h2>
-    <div>
-      <input type="text" id="search" placeholder="Search">
-      <button type="submit" id="searcher"><i class="fa fa-search"></i></button>
-      <div id="coincidencias">
-      </div>
+  <div id="contenedorGeneral">
+    <button id="botonMenu">Menu</button>
+    <label for="botonMenu" class="menuIcono"><i class="fas fa-bars fa-2x"></i></label>
+    <div id="contenidoMenu" class="ocultar-menu">
+      <!-- Buscador por nombre de atleta -->
+      <div class="buscador">
+        <input type="text" placeholder="Search" id="search">
+        <button type="submit" id="searcher"><i class="fa fa-search"></i></button>
+        <div id="coincidencias"></div>
+      </div> 
+      <p class="p1">CLASIFICAR</p>
+      <!-- Filtro por medallas  -->
+        <p>MEDALLAS</p>
+        <ul>
+          <li><input type="radio" name="medallas" value="Gold">Oro</li>
+          <li><input type="radio" name="medallas" value="Silver">Plata</li>
+          <li><input type="radio" name="medallas" value="Bronze">Bronce</li>
+        </ul>
+      <!-- Filtro por deportes -->
+        <select id="disciplinas" name="disciplinas">
+          <option value="">Disciplinas</option>
+        </select>
+        <!-- Filtro por paises -->
+        <select id="paises" name="paises">
+          <option value="">Países</option>
+        </select>
     </div>
-    <!-- Filtro por medallas  -->
-    <p>MEDALLAS</p>
-    <p id="line"></p>
-    <ul>
-      <li><input type="radio" name="medalla" value="Gold">Oro</li>
-      <li><input type="radio" name="medalla" value="Silver">Plata</li>
-      <li><input type="radio" name="medalla" value="Bronze">Bronce</li>
-    </ul>
-    <!-- Filtro por deportes -->
-    <select id="disciplinas" name="disciplinas">
-      <option value="Disciplinas">Disciplinas</option>
-    </select>
-    <!-- Filtro por paises -->
-    <select id="paises" name="paises">
-      <option value="Paises">Países</option>
-    </select>
-  </div>
-  <div id="contenedor">
-    <header>WIKIATLETAS</header>
-      <!-- Boton de ordenar -->
+    <div id="contenido">
+      <header>WIKIATLETAS</header>
+      <p class="lema">Encuentra los atletas de Rio 2016</p>
+        <!-- Boton de ordenar -->
       <select id="ordenador">
-        <option value="">Ordenar</option>
-        <option value="A-Z">A-Z</option>
-        <option value="Z-A">Z-A</option>
+        <option class="option" value="">Ordenar</option>
+        <option class="option" value="A-Z">A-Z</option>
+        <option class="option" value="Z-A">Z-A</option>
       </select>
       <main id="main"></main>
       <canvas id="myChart"></canvas>
+    </div>
   </div>
+    <!-- <footer id="footer"> PIE</footer> -->
   <div id="root"></div>
   <script src="main.js" type="module"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
