@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    padding: 0;
 }
 body {
     display: flex;
@@ -10,19 +9,33 @@ body {
     background-position: center;
 }
 #contenedorGeneral{
+    border: solid rgb(68, 0, 255); 
     display: flex;
-    width: 200vh;
-    max-width: 1024px;
+    flex-direction: row;
+    width: 600vw;
+    /* max-width: 1024px; */
     margin: auto;
     text-align: center;
-    align-items: center;
-    justify-content: center;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
-    flex-direction: column;
+}
+#search{
+    background-color: rgb(255, 255, 255);
+    width: 15vw;
+    height: 5vh;
+    border: solid 0.2vh rgb(78, 78, 78);
+    padding-left: 0vh;
+    padding-right: 0vh;
+}
+#searcher{
+    background: none;
+    font-size: 3vh;
+    font-weight: 1vh;
+    border: none;
 }
 #main {
-    /* border: solid red; */
+    border: solid 0.3vh  rgb(87, 87, 87);
+    border-radius: 2vh;
     flex-direction: column;
     display: flex;
     width: 60vw;
@@ -48,31 +61,53 @@ article {
     margin: auto;
     margin-top: 3vh;
     padding: 1vh;
-    box-sizing: border-box;
     color: black;
     background: rgb(248, 248, 255, 0.3);
-    /* background: rgb(0, 255, 255, 0.2); */
 }
 #contenido {
-    margin-left: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 72vw;
+    /* border: solid rgb(250, 2, 2);  */
 }
-/* ul{
-     border: solid red; 
-} */
+#medallasfiltro{
+    list-style: none;
+    border: solid 0.2vh black; 
+     width: 15vw;
+     height: 33vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     border-radius: 1vh;
+}
+#medallasfiltro p {
+    /* border: solid red;  */
+    text-align: left;
+    vertical-align: middle;
+    height: 4.8vh;
+    margin: 1vh;
+}
+#medallasfiltro p:first-child {
+    /* border: solid red;  */
+    text-align: center;
+}
+input[type = radio] {
+    /* margin-top: auto;
+    margin-bottom: auto; */
+    width: 4.5vw;
+    height: 4.5vh;
+    vertical-align: middle;
+}
 #contenidoMenu {
     /* border: solid red; */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    background: rgb(248, 248, 255, 0.5);
-    width: 50vh;
-    height: 100vh;
-    padding: 2vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
+    background: rgba(45, 231, 12, 0.493);
+    width: 55vh;
+    height: 98vh;
     font-size: 3vh;
     color: black;
 }
@@ -82,7 +117,7 @@ article {
 .menuIcono {
     display: none;
 }
-header {
+h1 {
     font-size: 6vh;
     border-width: thin;
     font-family: 'Anton', sans-serif;
@@ -90,14 +125,16 @@ header {
     color: rgb(20, 207, 20);
 }
 #ordenador {
+    border: solid 0.2vh rgb(57, 58, 58);
+    border-radius: 1vh;
     display: flex;
-    width: 17vh;
+    width: 10vw;
     min-width: 8vh;
-    height: 4vh;
+    height: 5vh;
     min-height: 2vh;
     font-size: 3vh;
-    margin: 5vh;
-    margin-left: 50vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     font-family: 'Lato', sans-serif;
 }
 .option{
@@ -108,9 +145,10 @@ header {
     margin-top: 2vh;
     color: rgb(8, 128, 8);
 }
-.buscador {
-    margin: 5vh;
-}
+/* .buscador {
+    /* margin: 5vh; */
+    border: solid red;
+} */
 #searcher{
     height: 5vh;
     width: 6vh;
@@ -129,31 +167,25 @@ input[type = text] {
     text-align: center;
 }
 li{
-    display: flex;
-    align-items: center;
-    margin: 3vh;
+    border: solid blue;
+    /* margin: 3vh; */
     font-size: 3vh;
 }
-input[type = radio]{
-    width: 3vh;
-    height: 3vh;
-}
-.p1 {
+.menuh2{
     border-bottom: 0.2vh solid black;
-    border-top: 0.2vh solid black;
-    margin-bottom: 1.5vh;
-
+    /* border-top: 0.2vh solid black; */
+    /* margin-bottom: 1.5vh; */
+    font-size: 4vh;
 }
 #disciplinas, #paises {
     font-size: 3vh;
-    width: 20vh;
-    height: 4.5vh;
+    width: 13vw;
+    height: 6vh;
     margin-top: 2vh;
-    border-bottom: 1vh solid black;
+    border: solid 0.2vh black;
+    border-radius: 1vh;
     font-family: 'Lato', sans-serif;
-    border-radius: 0.5vh;
     background: rgb(0,0,0,0);
-    border: none;
 }
 .ocultar{
     display: none;

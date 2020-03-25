@@ -15,19 +15,19 @@
     <label for="botonMenu" class="menuIcono"><i class="fas fa-bars fa-2x"></i></label>
     <div id="contenidoMenu" class="ocultar-menu">
       <!-- Buscador por nombre de atleta -->
+      <h2 class="menuh2">CLASIFICAR</h2>
       <div class="buscador">
         <input type="text" placeholder="Search" id="search">
         <button type="submit" id="searcher"><i class="fa fa-search"></i></button>
         <div id="coincidencias"></div>
       </div> 
-      <p class="p1">CLASIFICAR</p>
       <!-- Filtro por medallas  -->
+      <div id="medallasfiltro">
         <p>MEDALLAS</p>
-        <ul>
-          <li><input type="radio" name="medallas" value="Gold">Oro</li>
-          <li><input type="radio" name="medallas" value="Silver">Plata</li>
-          <li><input type="radio" name="medallas" value="Bronze">Bronce</li>
-        </ul>
+          <p><input type="radio" name="medallas" value="Gold">Oro</p>
+          <p><input type="radio" name="medallas" value="Silver">Plata</p>
+          <p><input type="radio" name="medallas" value="Bronze">Bronce</p>
+      </div>
       <!-- Filtro por deportes -->
         <select id="disciplinas" name="disciplinas">
           <option value="">Disciplinas</option>
@@ -36,10 +36,13 @@
         <select id="paises" name="paises">
           <option value="">Países</option>
         </select>
+        <button id="estadisticas">vjhgkg</button>
     </div>
     <div id="contenido">
-      <header>WIKIATLETAS</header>
-      <p class="lema">Encuentra los atletas de Rio 2016</p>
+      <header>
+        <h1>WIKIATLETAS</h1>
+        <h2 class="lema">Encuentra los atletas de Rio 2016</h2>
+      </header>
         <!-- Boton de ordenar -->
       <select id="ordenador">
         <option class="option" value="">Ordenar</option>
