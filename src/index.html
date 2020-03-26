@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/866f260442.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="contenedorGeneral">
-    <button id="botonMenu">Menu</button>
-    <label for="botonMenu" class="menuIcono"><i class="fas fa-bars fa-2x"></i></label>
-    <div id="contenidoMenu" class="ocultar-menu">
+    <button id="botonMenu"><i class="fas fa-bars fa-2x"></i></button>
+    <div id="contenidoMenu" class="menuClass ocultarMenu">
+      <button id="cerrarMenu"><i class="fas fa-times"></i></button>
       <!-- Buscador por nombre de atleta -->
       <h2 class="menuh2">CLASIFICAR</h2>
       <div class="buscador">
@@ -24,9 +22,9 @@
       <!-- Filtro por medallas  -->
       <div id="medallasfiltro">
         <p>MEDALLAS</p>
-          <p><input type="radio" name="medallas" value="Gold">Oro</p>
-          <p><input type="radio" name="medallas" value="Silver">Plata</p>
-          <p><input type="radio" name="medallas" value="Bronze">Bronce</p>
+          <label><input type="radio" name="medallas" value="Gold">Oro</label>
+          <label><input type="radio" name="medallas" value="Silver">Plata</label>
+          <label><input type="radio" name="medallas" value="Bronze">Bronce</label>
       </div>
       <!-- Filtro por deportes -->
         <select id="disciplinas" name="disciplinas">
@@ -36,7 +34,7 @@
         <select id="paises" name="paises">
           <option value="">Países</option>
         </select>
-        <button id="estadisticas"><i class="fas fa-medal"></i></button>
+        <button id="botongrafico"><i class="fas fa-medal"></i></button>
     </div>
     <div id="contenido">
       <header>
@@ -50,7 +48,10 @@
         <option class="option" value="Z-A">Z-A</option>
       </select>
       <main id="main"></main>
-      <div id="grafico">
+    </div>
+    <div id="contenedorgrafico" class="graficoclass">
+      <button id="cerrargrafico"><i class="fas fa-times"></i></button>
+      <div id="grafico" class="grafico">
         <canvas id="myChart"></canvas>
       </div>
     </div>

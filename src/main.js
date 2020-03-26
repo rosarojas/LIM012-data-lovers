@@ -223,7 +223,7 @@ const myChart = new Chart(ctx, {
   },
 });
 const boton = document.querySelector('#botonMenu');
-const mostrarMenu= () => {
+const mostrarMenu = () => {
   const menu = document.querySelector('#contenidoMenu');
   if (menu.classList.contains('ocultar-menu')) {
     menu.classList.remove('ocultar-menu');
@@ -234,3 +234,23 @@ const mostrarMenu= () => {
   }
 };
 boton.addEventListener('click', mostrarMenu);
+const botongrafico = document.getElementById('botongrafico');
+const contenedorGrafico = document.getElementById('contenedorgrafico');
+botongrafico.addEventListener('click', () => {
+  contenedorGrafico.classList.remove('graficoclass');
+  contenedorGrafico.classList.add('graficostyle');
+});
+const cerrargrafico = document.getElementById('cerrargrafico');
+cerrargrafico.addEventListener('click', () => {
+  contenedorGrafico.classList.add('graficoclass');
+  contenedorGrafico.classList.remove('graficostyle');
+});
+const contenidoMenu = document.getElementById('contenidoMenu');
+const botonMenu = document.getElementById('botonMenu');
+botonMenu.addEventListener('click', () => {
+  contenidoMenu.classList.toggle('ocultarMenu');
+});
+const cerrarMenu = document.getElementById('cerrarMenu');
+cerrarMenu.addEventListener('click', () => {
+  contenidoMenu.classList.add('ocultarMenu');
+});

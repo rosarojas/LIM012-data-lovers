@@ -1,4 +1,4 @@
-import {card, ordenar, filterData} from '../src/data.js';
+import {ordenar, filterData, estadistica} from '../src/data.js';
 describe('ordenar', () => {
   it('is a function', () => {
     expect(typeof ordenar).toBe('function');
@@ -147,51 +147,31 @@ describe('filterData', () => {
       }]);
   });
 });
-describe('card', () => {
+describe('estadistica', () => {
   it('is a function', () => {
-    expect(typeof card).toBe('function');
+    expect(typeof estadistica).toBe('function');
   });
-  it('returns `card`', () => {
-    expect(card([
+  it('returns `estadistica`', () => {
+    expect(estadistica([
       {
-        'name': 'Paola Bisiani',
+        'name': 'Paola',
+        'team': 'Brazil',
         'disciplinas': [
-          {
-            'disciplina': 'Archery Team',
-          }]}])).toBe(
-        // <div>
-        //   <article>
-        //     <img src="foto.png" alt="foto">
-        //       <div>
-        //         <p>Paola Bisiani</p>
-        //         <p>Archery Team</p>
-        //       </div>
-        //       <button class="verMas">+</button>
-        //       <div id="divInfo0" class="ocultar">
-        //         <p>name: Paola Bisiani</p>
-        //         <p class="datos">disciplina: Archery Team</p>
-        //       </div>
-        //       <button class="ocultar" id="verMenos">-</button>
-        //   </article>
-        // </div>
-    );
-  });
-  it('returns `card`', () => {
-    expect(card([
-      {
-        'name': 'Paola Bisiani',
+          {'medalla': 'Gold'}],
       },
       {
-        'name': 'Nataliya',
-        'pasatiempos': [
-          {
-            'correr': 'Archery Team',
-          },
-        ],
-      }])).toBe('<article><img src=\"foto.png\" alt=\"foto\"> ' +
-                '<div><p>name: Paola Bisiani </p></div> </article>' +
-                '<article><img src=\"foto.png\" alt=\"foto\"> ' +
-                '<div><p>name: Nataliya </p><p>correr: ' +
-                'Archery Team </p></div> </article>');
+        'name': 'Ana',
+        'team': 'Brazil',
+        'disciplinas': [
+          {'medalla': 'Silver'},
+          {'medalla': 'Gold'}],
+      },
+      {
+        'name': 'Ana',
+        'team': 'Chile',
+        'disciplinas': [
+          {'medalla': 'Silver'}],
+      },
+    ], 'Gold', ['Chile', 'Brazil'])).toStrictEqual([['Brazil'], [100]]);
   });
 });
