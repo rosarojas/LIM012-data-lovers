@@ -30,6 +30,7 @@ HU 7: Yo como atleta quiero buscar por su nombre a los atletas de los Juegos Ol�
 ![Sin titulo](src/imagenes/buscador.jpeg)
 HU 8: Yo como atleta quiero saber quienes son los países más destacados de las olimpiadas para enterarme más sobre ellos.  
 ![Sin titulo](src/imagenes/hu8.jpeg)
+
 ###  Prototipo de alta fidelidad
 
 ![Sin título](src/imagenes/figma-hu1.jpg)  
@@ -37,13 +38,47 @@ HU 8: Yo como atleta quiero saber quienes son los países más destacados de las
 ###  Testeos de usabilidad
  Nuestros filtros confundian al usuario cuando se encontraba ubicado arriba de un buscador, les hacias creer que debian escribir algo primero para recien usar los filtros, para la solucion se tubo que reacomodar los filtros de manera que su uso quede mas claro
 
-##  Objetivos de aprendizaje
-* Array.sort
-* Array.map
-* Array.filter
-* Array.reduce
-* Array.forEach
-###  UX
-* Crear prototipos para obtener feedback e iterar.
-* Aplicar los principios de diseño visual.
-* Planear y ejecutar tests de usabilidad.
+## Objetivos de aprendizaje
+### UX
+
+- [x] Diseñar la aplicación pensando y entendiendo al usuario.
+- [x] Crear prototipos para obtener _feedback_ e iterar.
+- [x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
+- [x] Planear y ejecutar _tests_ de usabilidad.
+
+### HTML y CSS
+
+- [x] Entender y reconocer por qué es importante el HTML semántico.
+- [x] Identificar y entender tipos de selectores en CSS.
+- [ ] Entender como funciona `flexbox` en CSS.
+- [x] Construir tu aplicación respetando el diseño planeado (maquetación).
+
+### DOM
+
+- [x] Entender y reconocer los selectores del DOM (`querySelector` | `querySelectorAll`).
+- [x] Manejar eventos del DOM. (`addEventListener`)
+- [x] Manipular dinámicamente el DOM. (`createElement`, `appendchild`, `innerHTML`, `value`)
+
+### Javascript
+
+- [x] Manipular arrays (`filter` | `map` | `sort` | `reduce`).
+- [x] Manipular objects (key | value).
+- [x] Entender el uso de condicionales (`if-else` | `switch`).
+- [ ] Entender el uso de bucles (`for` | `forEach`).
+- [x] Entender la diferencia entre expression y statements.
+- [ ] Utilizar funciones (`parámetros` | `argumentos` | `valor de retorno`).
+- [x] Entender la diferencia entre tipos de datos atómicos y estructurados.
+- [x] Utilizar ES Modules (`import` | `export`).
+
+### Pruebas Unitarias (_testing_)
+- [ ] Testear funciones (funciones puras).
+
+### Git y GitHub
+- [x] Ejecutar comandos de git (`add` | `commit` | `pull` | `status` | `push`).
+- [x] Utilizar los repositorios de GitHub (`clone` | `fork` | `gh-pages`).
+- [x] Colaborar en Github (`pull requests`).
+
+### Buenas prácticas de desarrollo
+- [ ] Organizar y dividir el código en módulos (Modularización).
+- [x] Utilizar identificadores descriptivos (Nomenclatura | Semántica).
+- [x] Utilizar linter para seguir buenas prácticas (ESLINT).
