@@ -6,7 +6,7 @@
    Los usuarios principales son atletas que competirán en las próximas olimpiadas de Tokio 2020.
 
 * ¿Cuáles son los objetivos de estos usuarios en relación con el producto?  
-@@ -19,15 +18,32 @@
+
   El objetivo de los atletas es instruirse, estudiar las estadísticas de Juegos Olímpicos pasados, conocer los participantes más destacados y en qué disciplinas, para analizar sus tácticas de juego a mayor profundidad.
 
 ##  Diseño de la interfaz de usuario
@@ -35,7 +35,7 @@ HU 8: Yo como atleta quiero saber quienes son los países más destacados de las
 ![Sin título](src/imagenes/figma-hu1.jpg)  
 
 ###  Testeos de usabilidad
- Nuestros filtros confundian al ususaro cuando se encontraba ubicado arriba de un buscador, les hacias creer que debian escribir algo primero para recien usar los filtros, para la solucion se tubo que reacomodar los filtros de manera que su uso quede mas claro
+ Nuestros filtros confundian al usuario cuando se encontraba ubicado arriba de un buscador, les hacias creer que debian escribir algo primero para recien usar los filtros, para la solucion se tubo que reacomodar los filtros de manera que su uso quede mas claro
 
 ##  Objetivos de aprendizaje
 * Array.sort

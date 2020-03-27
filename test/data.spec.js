@@ -1,4 +1,4 @@
-import {ordenar, filterData, estadistica} from '../src/data.js';
+import {ordenar, filtroData, estadistica} from '../src/data.js';
 describe('ordenar', () => {
   it('is a function', () => {
     expect(typeof ordenar).toBe('function');
@@ -60,10 +60,10 @@ describe('ordenar', () => {
 });
 describe('filterData', () => {
   it('is a function', () => {
-    expect(typeof filterData).toBe('function');
+    expect(typeof filtroData).toBe('function');
   });
   it('returns `filterData`', () => {
-    expect(filterData([
+    expect(filtroData([
       {
         'name': 'Paola',
         'disciplinas': [
@@ -96,7 +96,7 @@ describe('filterData', () => {
       }]);
   });
   it('returns `filterData`', () => {
-    expect(filterData([
+    expect(filtroData([
       {
         'name': 'Paola',
         'disciplinas': [
@@ -124,7 +124,7 @@ describe('filterData', () => {
       }]);
   });
   it('returns `filterData`', () => {
-    expect(filterData([
+    expect(filtroData([
       {
         'name': 'Paola',
         'team': 'Colombia',

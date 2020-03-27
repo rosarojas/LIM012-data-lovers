@@ -265,7 +265,7 @@ img{
 #cerrarMenu{
     display: none;
 }
-@media (min-width: 320px) and (max-width: 700px) {
+@media screen and (max-width: 700px) {
     #botonMenu{
         display: flex;
     }
@@ -323,74 +323,6 @@ img{
     #coincidencias{
         width: 34vh;
         margin-top: 9vw;
-    }
-    .grafico{
-        width: 100vw;
-    }
-    #cerrargrafico{
-        margin-left: 80vw;
-    }
-}
-@media (min-width: 700px) and (max-width: 1024px) {
-    #botonMenu{
-        display: flex;
-        font-size: 2vh;
-    }
-    .ocultarMenu{
-    display: none;
-    }
-    .menuClass{
-        position: absolute;
-        width: 80vw;
-        background-color: rgb(49, 180, 26);
-    }
-    #cerrarMenu{
-        display: flex;
-        background: none;
-        border: none;
-        font-size: 7vh;
-        color: rgba(99, 99, 99, 0.877);
-        align-self: flex-end;
-    }
-    #cerrarMenu:hover i {
-        color: rgb(216, 216, 216);
-    }
-    #botongrafico{
-        width: 18vw;
-    }
-    #contenido {
-       width: 100vw;
-       height: 100vh;
-    }
-    #disciplinas, #paises {
-        width: 35vw;
-    }
-    #medallasfiltro{
-         width: 50vw;
-    }
-    #search{
-        width: 60vw;
-    }
-    .buscador {
-        width: 80vw
-    }
-    #ordenador {
-       width: 30vw;
-    }
-    input[type = radio] {
-        width: 7vw;
-        height: 7vh;
-
-    }
-    #main {
-        width: 80vw;
-    } 
-    article {
-        width: 60vw;
-    }
-    #coincidencias{
-        width: 45vh;
-        margin-top: 7vw;
     }
     .grafico{
         width: 100vw;

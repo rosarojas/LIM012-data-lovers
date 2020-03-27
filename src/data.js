@@ -134,5 +134,4 @@ const estadistica = (data, medal, paisesTotal) => {
   result.push(porcentajes);
   return result;
 };
-
 export {cartaHTML, ordenar, filtroData, estadistica};

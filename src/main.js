@@ -1,14 +1,6 @@
 import {cartaHTML, ordenar, filtroData, estadistica} from './data.js';
 import data from './data/atletas/atletas.js';
-const getUserAsync = async () => {
-  const response = await fetch('./data/atletas/atletas.json');
-  const data = await response.json();
-  return data;
-};
-const fetchdata = getUserAsync().then((data) => {
-  return data;
-});
-console.log(fetchdata);
+
 // Filtrar por disciplinas
 const arrDataAtletas = data.atletas;
 const arrDisciplinas = arrDataAtletas.filter((atleta) =>
