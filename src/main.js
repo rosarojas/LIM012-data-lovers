@@ -1,19 +1,13 @@
 import {card, ordenar, filterData, estadistica} from './data.js';
 import data from './data/atletas/atletas.js';
+fetch('./data/atletas/atletas.json')
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
 // Filtrar por disciplinas
-// const fetchData = () => {
-//   debugger;
-//   let result;
-//   fetch('./data/atletas/atletas.json')
-//       .then(function(response) {
-//         response.json();
-//       }).then(function(myJson) {
-//         result = myJson;
-//       });
-//   return result;
-// };
-// const hi = fetchData();
-// console.log(hi);
 const arrDataAtletas = data.atletas;
 const arrDisciplinas = arrDataAtletas.filter((atleta) =>
   (atleta.hasOwnProperty('disciplinas')));
@@ -142,14 +136,6 @@ botonesMedalla.forEach((boton) => {
 //     }
 //   });
 // });
-
-// console.log(card([
-//   {
-//     'name': 'Paola Bisiani',
-//     'disciplinas': [
-//       {
-//         'disciplina': 'Archery Team',
-//       }]}]));
 const nombreAtletas = atletas2016.map((atleta) => (atleta.name));
 const inputBuscar = document.getElementById('search');
 const buscador = document.getElementById('searcher');

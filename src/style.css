@@ -44,7 +44,8 @@ body {
     justify-content: center;
     overflow: auto;
     width: 60vw;
-    height: 71vh;
+    height: 71vh; 
+    padding-top: 0vh;
 } 
 #main::-webkit-scrollbar {
     width: 1vh;
@@ -172,6 +173,7 @@ li{
     border-radius: 5vh;
     width: 7vh;
     background: white;
+    padding: 0vw;
 }
 img{
     width: 5em;
@@ -200,6 +202,7 @@ img{
 }
 #botongrafico{
     background: none;
+    padding: 0vw;
     width: 4.5vw;
     height: 10vh;
     border: solid 0.3vh  rgb(57, 58, 58);
@@ -287,7 +290,7 @@ img{
     input[type = radio] {
         width: 7vw;
         height: 7vh;
-    
+
     }
     #main {
         width: 80vw;
@@ -297,5 +300,11 @@ img{
     }
     #coincidencias{
         width: 40vh;
+    }
+    .grafico{
+        width: 100vw;
+    }
+    #cerrargrafico{
+        margin-left: 80vw;
     }
 }
