@@ -36,7 +36,6 @@ const card = (arr) => {
           const elementKeys = Object.keys(element);
           for (let i = 0; i < elementKeys.length; i++) {
             const datos = document.createElement('p');
-            datos.className = 'datos';
             const textoDatos = document.createTextNode(
                 `${elementKeys[i]}: ${element[elementKeys[i]]}`);
             datos.appendChild(textoDatos);

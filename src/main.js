@@ -1,12 +1,21 @@
 import {card, ordenar, filterData, estadistica} from './data.js';
 import data from './data/atletas/atletas.js';
-fetch('./data/atletas/atletas.json')
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-    });
+// fetch('./data/atletas/atletas.json')
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log(data);
+//     });
+const request = async () => {
+  const response = await fetch('./data/atletas/atletas.json');
+  const json = await response.json();
+  return json;
+};
+const useRequest = async () => {
+  return await request();
+};
+console.log(useRequest());
 // Filtrar por disciplinas
 const arrDataAtletas = data.atletas;
 const arrDisciplinas = arrDataAtletas.filter((atleta) =>

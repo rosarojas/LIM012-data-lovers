@@ -14,10 +14,20 @@ body {
     flex-direction: row;
     width: 600vw;
     height: 100vh;
-    margin: auto;
-    text-align: center;
+    align-items: center;
+    justify-content: space-between;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+}
+.buscador {
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buscador div:first-child{
+    text-align: center;
+ 
 }
 #search{
     background-color: rgb(255, 255, 255);
@@ -31,6 +41,7 @@ body {
     background: none;
     font-size: 3vh;
     border: none;
+    position: absolute;
 }
 #searcher:hover i{
     color: rgb(255, 255, 255);
@@ -65,11 +76,19 @@ article {
     color: black;
     background: rgb(248, 248, 255, 0.3);
     margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+article p{
+    text-align: center;
 }
 #contenido {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 72vw;
     /* border: solid rgb(250, 2, 2);  */
 }
@@ -117,6 +136,7 @@ h1 {
     font-family: 'Anton', sans-serif;
     letter-spacing: 0.3vh;
     color: rgb(20, 207, 20);
+    text-align: center;
 }
 #ordenador {
     border: solid 0.2vh rgb(57, 58, 58);
@@ -135,6 +155,7 @@ h1 {
     font-size: 3vh;
 }
 .lema {
+    text-align: center;
     font-size: 3vh;
     margin-top: 2vh;
     color: rgb(8, 128, 8);
@@ -146,13 +167,10 @@ h1 {
 }
 li{
     border: solid blue;
-    /* margin: 3vh; */
     font-size: 3vh;
 }
 .menuh2{
     border-bottom: 0.2vh solid black;
-    /* border-top: 0.2vh solid black; */
-    /* margin-bottom: 1.5vh; */
     font-size: 4vh;
 }
 #disciplinas, #paises {
@@ -181,6 +199,7 @@ img{
     margin-bottom: 2vh;
 }
 #coincidencias{
+    margin-top: 2.5vw;
     position: absolute;
     width: 40vh;
     max-height: 30vh;
@@ -236,6 +255,7 @@ img{
     background: none;
     border: none;
     height: 10vh;
+    align-self: flex-start;
 }
 #botonMenu:hover i {
     color: beige;
@@ -243,7 +263,7 @@ img{
 #cerrarMenu{
     display: none;
 }
-@media (min-width: 320px) and (max-width: 1024px) {
+@media (min-width: 320px) and (max-width: 700px) {
     #botonMenu{
         display: flex;
     }
@@ -299,7 +319,74 @@ img{
         width: 60vw;
     }
     #coincidencias{
-        width: 40vh;
+        width: 34vh;
+        margin-top: 9vw;
+    }
+    .grafico{
+        width: 100vw;
+    }
+    #cerrargrafico{
+        margin-left: 80vw;
+    }
+}
+@media (min-width: 700px) and (max-width: 1024px) {
+    #botonMenu{
+        display: flex;
+    }
+    .ocultarMenu{
+    display: none;
+    }
+    .menuClass{
+        position: absolute;
+        width: 80vw;
+        background-color: rgb(49, 180, 26);
+    }
+    #cerrarMenu{
+        display: flex;
+        background: none;
+        border: none;
+        font-size: 7vh;
+        color: rgba(99, 99, 99, 0.877);
+        align-self: flex-end;
+    }
+    #cerrarMenu:hover i {
+        color: rgb(216, 216, 216);
+    }
+    #botongrafico{
+        width: 18vw;
+    }
+    #contenido {
+       width: 90vw;
+    }
+    #disciplinas, #paises {
+        width: 35vw;
+    }
+    #medallasfiltro{
+         width: 50vw;
+    }
+    #search{
+        width: 60vw;
+    }
+    .buscador {
+        width: 80vw
+    }
+    #ordenador {
+       width: 30vw;
+    }
+    input[type = radio] {
+        width: 7vw;
+        height: 7vh;
+
+    }
+    #main {
+        width: 80vw;
+    } 
+    article {
+        width: 60vw;
+    }
+    #coincidencias{
+        width: 45vh;
+        margin-top: 7vw;
     }
     .grafico{
         width: 100vw;
