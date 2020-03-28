@@ -1,28 +1,29 @@
 import {card, ordenar, filterData, estadistica} from './data.js';
 import data from './data/atletas/atletas.js';
-// fetch('./data/atletas/atletas.json')
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((data) => {
-//       console.log(data);
-//     });
-const request = async () => {
+// const request = async () => {
+//   const response = await fetch('./data/atletas/atletas.json');
+//   const json = await response.json();
+//   return json;
+// };
+// const useRequest = async () => {
+//   return await request();
+// };
+// console.log(useRequest());
+const getUserAsync = async () => {
   const response = await fetch('./data/atletas/atletas.json');
-  const json = await response.json();
-  return json;
+  const data = await response.json();
+  return data;
 };
-const useRequest = async () => {
-  return await request();
-};
-console.log(useRequest());
+const fetchdata = [];
+getUserAsync().then((data) => fetchdata.push(data));
+console.log(fetchdata);
 // Filtrar por disciplinas
 const arrDataAtletas = data.atletas;
 const arrDisciplinas = arrDataAtletas.filter((atleta) =>
   (atleta.hasOwnProperty('disciplinas')));
 const atletas2016 = arrDisciplinas.filter((listaAtletas) =>
   (listaAtletas.disciplinas[0].año === 2016));
-const topAtletas = function top() {
+const topAtletas = (() => {
   const topA = [];
   atletas2016.forEach((perfil, index) => {
     let gold = 0;
@@ -36,7 +37,7 @@ const topAtletas = function top() {
     }
   });
   return topA;
-}();
+})();
 const usuarios = topAtletas.map((indice) => atletas2016[indice]);
 const main = document.getElementsByTagName('main')[0];
 main.appendChild(card(usuarios));
