@@ -14,8 +14,10 @@ const getUserAsync = async () => {
   const data = await response.json();
   return data;
 };
-const fetchdata = [];
-getUserAsync().then((data) => fetchdata.push(data));
+// const fetchdata = [];
+// getUserAsync().then((data) => fetchdata.push(data));
+// console.log(fetchdata);
+const fetchdata = getUserAsync().then((data) => {return data});
 console.log(fetchdata);
 // Filtrar por disciplinas
 const arrDataAtletas = data.atletas;
