@@ -3,7 +3,7 @@
 }
 body {
     display: flex;
-    background: url(fondo-rio.jpg);
+    background: url(imagenes/fondo-rio.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -47,10 +47,10 @@ body {
     height: 71vh;
 } 
 #main::-webkit-scrollbar {
-    width: 1vh;
+    width: 0.7vw;
 }
 #main::-webkit-scrollbar-thumb {
-    width: 1vh;
+    width: 0.7vw;
     height: 10vh;
     background-color: rgba(12, 209, 12);
     border-radius: 1vh;

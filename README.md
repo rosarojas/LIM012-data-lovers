@@ -1,7 +1,6 @@
 # WIKIATLETAS
 ## Definición del producto
-### Usuarios 
-* ¿Quiénes son los principales usuarios de producto?  
+* ¿Quiénes son los principales usuarios de producto?    
    Los usuari@s principales son l@s atletas que competirán en las próximas olimpiadas de Tokio 2020.
 
 * ¿Cuáles son los objetivos de estos usuarios en relación con el    producto?  
@@ -19,15 +18,32 @@
 
 ## Diseño de la Interfaz de Usuario
 ### Historias de usuario y prototipo de baja fidelidad
-- HU 1: Yo como atleta quiero ver el top de atletas con más medallas de los Juegos Olímpicos 2016 para saber quiénes son.
-
-
+HU 1: Yo como atleta quiero ver el top de atletas con más medallas de oro de los Juegos Olímpicos 2016 para saber quiénes son.  
+![Sin titulo](src/imagenes/hu1.jpeg)
+HU 2: Yo como atleta quiero ver el perfil completo del atleta para conocerlo más.  
+![Sin titulo](src/imagenes/hu2.jpeg)
+HU 3: Yo como atleta quiero ordenar los resultados de mi búsqueda para verlos en orden alfabético.  
+![Sin titulo](src/imagenes/hu1.jpeg)
+HU 4: Yo como atleta quiero ver los medallistas de oro, plata y bronce de los Juegos Olímpicos 2016 para saber quiénes son.  
+![Sin titulo](src/imagenes/hu4.jpeg)
+HU 5: Yo como atleta quiero ver los medallistas de cada deporte en los Juegos Olímpicos 2016 para saber quiénes son.  
+![Sin título](src/imagenes/hu5-select.jpeg)
+![Sin título](src/imagenes/hu5.jpeg)
+HU 6: Yo como atleta quiero ver los medallistas de cada país en los Juegos Olímpicos 2016 para saber quiénes son.  
+![Sin titulo](src/imagenes/hu6-select.jpeg)
+![Sin titulo](src/imagenes/hu6.jpeg)
+HU 7: Yo como atleta quiero buscar por su nombre a los atletas de los Juegos Olímpicos 2016 para ver información detallada sobre ellos.  
+![Sin titulo](src/imagenes/buscador.jpeg)
+HU 8: Yo como atleta quiero saber quienes son los países más destacados de las olimpiadas para enterarme mas sobre ellos.  
+![Sin titulo](src/imagenes/hu8.jpeg)
 ### Prototipo de alta fidelidad
 
+![Sin título](src/imagenes/figma-hu1.jpg)  
 
 ### Testeos de usabilidad
 qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
 mejoraste en tu propuesta final.
+
 ## Objetivos de aprendizaje
 ### UX
 
