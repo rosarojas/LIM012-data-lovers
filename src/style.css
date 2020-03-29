@@ -25,7 +25,6 @@ body {
 }
 .buscador div:first-child{
     text-align: center;
- 
 }
 #search{
     background-color: rgb(255, 255, 255);
@@ -57,10 +56,10 @@ body {
     padding-top: 0vh;
 } 
 #main::-webkit-scrollbar {
-    width: 1vh;
+    width: 0.7vw;
 }
 #main::-webkit-scrollbar-thumb {
-    width: 1vh;
+    width: 0.7vw;
     height: 10vh;
     background-color: rgba(12, 209, 12);
     border-radius: 1vh;
@@ -88,7 +87,6 @@ article p{
     align-items: center;
     justify-content: center;
     width: 72vw;
-    /* border: solid rgb(250, 2, 2);  */
 }
 input[type = radio] {
     width: 4.5vw;
@@ -113,11 +111,9 @@ input[type = radio] {
     margin: 1vh;
 }
 #medallasfiltro p:first-child {
-    /* border: solid red;  */
     text-align: center;
 }
 .menuClass {
-    /* border: solid red; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
