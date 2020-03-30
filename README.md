@@ -27,12 +27,12 @@ HU 6: Yo como atleta quiero ver a los medallistas de cada país en los Juegos Ol
 ![Sin titulo](src/imagenes/hu6-select.jpeg)
 ![Sin titulo](src/imagenes/hu6.jpeg)
 HU 7: Yo como atleta quiero buscar por su nombre a los atletas de los Juegos Olímpicos 2016 para ver información detallada sobre ellos.  
-! [Sin titulo] (src/imagenes/buscador.jpeg)
+![Sin titulo](src/imagenes/buscador.jpeg)
 HU 8: Yo como atleta quiero saber quienes son los países más destacados de las olimpiadas para enterarme más sobre ellos.  
-! [Sin titulo] (src/imagenes/hu8.jpeg)
+![Sin titulo](src/imagenes/hu8.jpeg)
 ###  Prototipo de alta fidelidad
 
-! [Sin título] (src/imagenes/figma-hu1.jpg)  
+![Sin título](src/imagenes/figma-hu1.jpg)  
 
 ###  Testeos de usabilidad
  Nuestros filtros confundian al ususaro cuando se encontraba ubicado arriba de un buscador, les hacias creer que debian escribir algo primero para recien usar los filtros, para la solucion se tubo que reacomodar los filtros de manera que su uso quede mas claro
