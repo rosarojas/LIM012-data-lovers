@@ -13,26 +13,26 @@
 ###  Historias de usuario y prototipo de baja fidelidad
 
 HU 1: Yo como atleta quiero ver el top de atletas con más medallas de oro de los Juegos Olímpicos 2016 para saber quiénes son.  
-! [ Sin titulo ] (src/imagenes/hu1.jpeg)
+![Sin titulo](src/imagenes/hu1.jpeg)
 HU 2: Yo como atleta quiero ver el perfil completo del atleta para conocerlo más.  
-! [ Sin titulo ] (src/imagenes/hu2.jpeg)
+![Sin titulo](src/imagenes/hu2.jpeg)
 HU 3: Yo como atleta quiero ordenar los resultados de mi búsqueda para verlos en orden alfabético.  
-! [ Sin titulo ] (src/imagenes/hu1.jpeg)
+![Sin titulo](src/imagenes/hu1.jpeg)
 HU 4: Yo como atleta quiero ver los medallistas de oro, plata y bronce de los Juegos Olímpicos 2016 para saber quiénes son.  
-! [ Sin titulo ] (src/imagenes/hu4.jpeg)
+![Sin titulo](src/imagenes/hu4.jpeg)
 HU 5: Yo como atleta quiero ver a los medallistas de cada deporte en los Juegos Olímpicos 2016 para saber quiénes son.  
-! [ Sin título ] (src/imagenes/hu5-select.jpeg)
-! [ Sin título ] (src/imagenes/hu5.jpeg)
+![Sin título](src/imagenes/hu5-select.jpeg)
+![Sin título](src/imagenes/hu5.jpeg)
 HU 6: Yo como atleta quiero ver a los medallistas de cada país en los Juegos Olímpicos 2016 para saber quiénes son.  
-! [ Sin titulo ] (src/imagenes/hu6-select.jpeg)
-! [ Sin titulo ] (src/imagenes/hu6.jpeg)
+![Sin titulo](src/imagenes/hu6-select.jpeg)
+![Sin titulo](src/imagenes/hu6.jpeg)
 HU 7: Yo como atleta quiero buscar por su nombre a los atletas de los Juegos Olímpicos 2016 para ver información detallada sobre ellos.  
-! [ Sin titulo ] (src/imagenes/buscador.jpeg)
+! [Sin titulo] (src/imagenes/buscador.jpeg)
 HU 8: Yo como atleta quiero saber quienes son los países más destacados de las olimpiadas para enterarme más sobre ellos.  
-! [ Sin titulo ] (src/imagenes/hu8.jpeg)
+! [Sin titulo] (src/imagenes/hu8.jpeg)
 ###  Prototipo de alta fidelidad
 
-! [ Sin título ] (src/imagenes/figma-hu1.jpg)  
+! [Sin título] (src/imagenes/figma-hu1.jpg)  
 
 ###  Testeos de usabilidad
  Nuestros filtros confundian al ususaro cuando se encontraba ubicado arriba de un buscador, les hacias creer que debian escribir algo primero para recien usar los filtros, para la solucion se tubo que reacomodar los filtros de manera que su uso quede mas claro
