@@ -1,22 +1,10 @@
-import {card, ordenar, filterData, estadistica} from './data.js';
+import {cartaHTML, ordenar, filtroData, estadistica} from './data.js';
 import data from './data/atletas/atletas.js';
-// const request = async () => {
-//   const response = await fetch('./data/atletas/atletas.json');
-//   const json = await response.json();
-//   return json;
-// };
-// const useRequest = async () => {
-//   return await request();
-// };
-// console.log(useRequest());
 const getUserAsync = async () => {
   const response = await fetch('./data/atletas/atletas.json');
   const data = await response.json();
   return data;
 };
-// const fetchdata = [];
-// getUserAsync().then((data) => fetchdata.push(data));
-// console.log(fetchdata);
 const fetchdata = getUserAsync().then((data) => {return data});
 console.log(fetchdata);
 // Filtrar por disciplinas
@@ -42,7 +30,7 @@ const topAtletas = (() => {
 })();
 const usuarios = topAtletas.map((indice) => atletas2016[indice]);
 const main = document.getElementsByTagName('main')[0];
-main.appendChild(card(usuarios));
+main.appendChild(cartaHTML(usuarios));
 // obtener id de los elementos mostrados
 const obtenerUsuarios = () => {
   const elementosId = [];
@@ -66,7 +54,7 @@ selector.addEventListener('change', (event) => {
   const usuariosMostrados = obtenerUsuarios();
   main.innerHTML = '';
   ordenar(usuariosMostrados, event.target.value);
-  main.appendChild(card(usuariosMostrados));
+  main.appendChild(cartaHTML(usuariosMostrados));
 });
 // Lista de países en select
 const listaPaisesRepetidos = atletas2016.map((paises) => paises.team);
@@ -85,9 +73,9 @@ const paisesSelect = () => {
 paisesSelect();
 // funcionalidad select pais
 selectPais.addEventListener('change', (event) => {
-  const resultado = filterData(atletas2016, 'team', event.target.value);
+  const resultado = filtroData(atletas2016, 'team', event.target.value);
   main.innerHTML = '';
-  main.appendChild(card(resultado));
+  main.appendChild(cartaHTML(resultado));
 });
 // Lista de diciplinas en select
 const listaDisciplinasArr = atletas2016.map((atleta) =>
@@ -118,17 +106,17 @@ const disciplinas = () => {
 };
 disciplinas();
 selectDisciplina.addEventListener('change', (event) => {
-  const resultado = filterData(atletas2016, 'disciplinas', event.target.value);
+  const resultado = filtroData(atletas2016, 'disciplinas', event.target.value);
   main.innerHTML = '';
-  main.appendChild(card(resultado));
+  main.appendChild(cartaHTML(resultado));
 });
 //  funcionalidad botones medallas
 const botonesMedalla = document.getElementsByName('medallas');
 botonesMedalla.forEach((boton) => {
   boton.addEventListener('click', () => {
-    const resultado = filterData(atletas2016, 'medalla', boton.value);
+    const resultado = filtroData(atletas2016, 'medalla', boton.value);
     main.innerHTML = '';
-    main.appendChild(card(resultado));
+    main.appendChild(cartaHTML(resultado));
   });
 });
 // const botonesMedalla = document.getElementsByName('medalla');
@@ -136,15 +124,15 @@ botonesMedalla.forEach((boton) => {
 //   boton.addEventListener('click', () => {
 //     if (selectDisciplina.value ===
 //       'Disciplinas' && selectPais.value === 'Paises') {
-//       const resultado = filterData(atletas2016, 'medalla', boton.value);
+//       const resultado = filtroData(atletas2016, 'medalla', boton.value);
 //       main.innerHTML= '';
-//       main.appendChild(card(resultado));
+//       main.appendChild(cartaHTML(resultado));
 //     } else {
 //       const usuariosMostrados = obtenerUsuarios();
-//       const resultado = filterData(
+//       const resultado = filtroData(
 //           usuariosMostrados, 'medalla', boton.value);
 //       main.innerHTML= '';
-//       main.appendChild(card(resultado));
+//       main.appendChild(cartaHTML(resultado));
 //     }
 //   });
 // });
@@ -155,7 +143,7 @@ buscador.addEventListener('click', () => {
   const resultado = atletas2016.filter((atleta) =>
     (atleta.name.toLowerCase() == inputBuscar.value.toLowerCase()));
   main.innerHTML = '';
-  main.appendChild(card(resultado));
+  main.appendChild(cartaHTML(resultado));
 });
 // `[${resultado}]`
 const divCoincidencias = document.getElementById('coincidencias');

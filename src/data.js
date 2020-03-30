@@ -1,4 +1,4 @@
-const card = (arr) => {
+const cartaHTML = (arr) => {
   const mainDiv = document.createElement('div');
   arr.forEach((element, index) => {
     const infokeys = Object.keys(element);
@@ -89,7 +89,7 @@ const ordenar = (data, orden) => {
     return resultado.reverse();
   };
 };
-const filterData = (data, filtro, value) => {
+const filtroData = (data, filtro, value) => {
   if (filtro === 'disciplinas') {
     const resultado = data.filter((atleta) =>
       (atleta[filtro].some((objeto) =>
@@ -107,7 +107,7 @@ const filterData = (data, filtro, value) => {
   };
 };
 const estadistica = (data, medal, paisesTotal) => {
-  const grupoAtletas = filterData(data, 'medalla', medal);
+  const grupoAtletas = filtroData(data, 'medalla', medal);
   const result= [];
   const arr = [];
   let totalSum = 0;
@@ -135,4 +135,4 @@ const estadistica = (data, medal, paisesTotal) => {
   return result;
 };
 
-export {card, ordenar, filterData, estadistica};
+export {cartaHTML, ordenar, filtroData, estadistica};
