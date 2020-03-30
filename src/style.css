@@ -128,7 +128,7 @@ input[type = radio] {
     width: 26vw;
     height: 100vh;
     font-size: 3vh;
-    color: black;
+    color: rgb(66, 65, 65);
 }
 h1 {
     font-size: 6vh;
@@ -252,10 +252,12 @@ img{
 }
 #botonMenu{
     display: none;
+    color: rgb(116, 112, 112);
     background: none;
     border: none;
     height: 10vh;
     align-self: flex-start;
+    position: absolute;
 }
 #botonMenu:hover i {
     color: beige;
@@ -290,7 +292,7 @@ img{
         width: 18vw;
     }
     #contenido {
-       width: 90vw;
+       width: 100vw;
     }
     #disciplinas, #paises {
         width: 35vw;
@@ -332,6 +334,7 @@ img{
 @media (min-width: 700px) and (max-width: 1024px) {
     #botonMenu{
         display: flex;
+        font-size: 2vh;
     }
     .ocultarMenu{
     display: none;
@@ -356,7 +359,8 @@ img{
         width: 18vw;
     }
     #contenido {
-       width: 90vw;
+       width: 100vw;
+       height: 100vh;
     }
     #disciplinas, #paises {
         width: 35vw;
