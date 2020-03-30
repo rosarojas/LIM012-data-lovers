@@ -5,7 +5,7 @@ const card = (arr) => {
     const article = document.createElement('article');
     article.setAttribute('id', element.id);
     const img = document.createElement('img');
-    img.setAttribute('src', 'foto.png');
+    img.setAttribute('src', 'imagenes/foto.png');
     img.setAttribute('alt', 'foto');
     const vistaPrevia = document.createElement('div');
     const nombre = document.createElement('p');
