@@ -262,14 +262,17 @@ img{
 @media screen and (max-width: 700px) {
     #botonMenu{
         display: flex;
+        cursor: pointer;
     }
     .ocultarMenu{
     display: none;
+    overflow: hidden;
     }
     .menuClass{
         position: absolute;
         width: 80vw;
         background-color: rgb(49, 180, 26);
+        transition: 0.5s;
     }
     #cerrarMenu{
         display: flex;

@@ -58,11 +58,11 @@ describe('ordenar', () => {
       }]);
   });
 });
-describe('filterData', () => {
+describe('filtroData', () => {
   it('is a function', () => {
     expect(typeof filtroData).toBe('function');
   });
-  it('returns `filterData`', () => {
+  it('returns `filtroData`', () => {
     expect(filtroData([
       {
         'name': 'Paola',
@@ -95,7 +95,7 @@ describe('filterData', () => {
           {'medalla': 'Gold'}],
       }]);
   });
-  it('returns `filterData`', () => {
+  it('returns `filtroData`', () => {
     expect(filtroData([
       {
         'name': 'Paola',

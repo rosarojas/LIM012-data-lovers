@@ -1,6 +1,8 @@
+// función cartaHTML para mostrar
 const cartaHTML = (arr) => {
   const mainDiv = document.createElement('div');
   arr.forEach((element, index) => {
+    // Se obtiene llaves de objeto
     const infokeys = Object.keys(element);
     const article = document.createElement('article');
     article.setAttribute('id', element.id);
@@ -13,6 +15,7 @@ const cartaHTML = (arr) => {
     nombre.appendChild(textoNombre);
     const disciplina = document.createElement('p');
     const textoDisciplina = document.createTextNode(
+        // se ingresa a array interno disciplinas
         element.disciplinas[0].disciplina);
     disciplina.appendChild(textoDisciplina);
     vistaPrevia.appendChild(nombre);
@@ -22,6 +25,7 @@ const cartaHTML = (arr) => {
     const textoVermas = document.createTextNode('+');
     verMas.appendChild(textoVermas);
     const divInfo = document.createElement('div');
+    // se le da clase e id a divInfo
     divInfo.id = `divInfo${index}`;
     divInfo.className = 'ocultar';
     const verMenos = document.createElement('button');
@@ -29,13 +33,18 @@ const cartaHTML = (arr) => {
     verMenos.setAttribute('id', 'verMenos');
     const textoVerMenos = document.createTextNode('-');
     verMenos.appendChild(textoVerMenos);
+    // se recorre el array de llaves
     for (let i = 0; i < infokeys.length; i++) {
+      // se obtiene valores de las llaves
       const infoValues = element[infokeys[i]];
+      // verificar si hay un array en infoValues
       if (Array.isArray(infoValues)) {
         infoValues.forEach((element) => {
+          // se obtiene llaves de array disciplinas
           const elementKeys = Object.keys(element);
           for (let i = 0; i < elementKeys.length; i++) {
             const datos = document.createElement('p');
+            // se concatena llaves y valores
             const textoDatos = document.createTextNode(
                 `${elementKeys[i]}: ${element[elementKeys[i]]}`);
             datos.appendChild(textoDatos);
@@ -73,8 +82,10 @@ const cartaHTML = (arr) => {
   });
   return mainDiv;
 };
+// funcion para ordenar
 const ordenar = (data, orden) => {
   const resultado = data.sort((previo, siguiente) => {
+    // ordenar por key nombre
     if (previo.name > siguiente.name) {
       return 1;
     } else if (previo.name < siguiente.name) {
@@ -89,16 +100,21 @@ const ordenar = (data, orden) => {
     return resultado.reverse();
   };
 };
+// funcion para filtrar
 const filtroData = (data, filtro, value) => {
+  // filtrar por disciplinas
   if (filtro === 'disciplinas') {
     const resultado = data.filter((atleta) =>
+      // verifica si elemento cumple con condicion
       (atleta[filtro].some((objeto) =>
         (objeto.disciplina === value))));
     return resultado;
+    // filtrar por país
   } else if (filtro === 'team') {
     const resultado = data.filter((atleta) =>
       (atleta[filtro] === value));
     return resultado;
+    // filtrar por medallas
   } else if (filtro === 'medalla') {
     const result = data.filter((atleta) =>
       (atleta.disciplinas.some((disciplina) =>
@@ -106,14 +122,17 @@ const filtroData = (data, filtro, value) => {
     return result;
   };
 };
+// función de estadística solo para medallas
 const estadistica = (data, medal, paisesTotal) => {
   const grupoAtletas = filtroData(data, 'medalla', medal);
   const result= [];
   const arr = [];
   let totalSum = 0;
+  // recorriendo cada país
   paisesTotal.forEach((pais) => {
     let counter = 0;
     grupoAtletas.forEach((atleta) => {
+      // país del atleta y país del array
       if (atleta.team == pais) {
         atleta.disciplinas.forEach((disciplina) => {
           if (disciplina.medalla === medal) {

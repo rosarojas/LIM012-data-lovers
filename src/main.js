@@ -1,16 +1,18 @@
 import {cartaHTML, ordenar, filtroData, estadistica} from './data.js';
 import data from './data/atletas/atletas.js';
-
-// Filtrar por disciplinas
 const arrDataAtletas = data.atletas;
+// verfica si tiene key disciplinas
 const arrDisciplinas = arrDataAtletas.filter((atleta) =>
   (atleta.hasOwnProperty('disciplinas')));
+// filtrar atletas del año 2016
 const atletas2016 = arrDisciplinas.filter((listaAtletas) =>
   (listaAtletas.disciplinas[0].año === 2016));
 const topAtletas = (() => {
   const topA = [];
   atletas2016.forEach((perfil, index) => {
+    // contador medallas de oro
     let gold = 0;
+    // recorre array de disciplinas
     perfil.disciplinas.forEach((disciplina) => {
       if (disciplina.medalla === 'Gold') {
         gold++;
@@ -22,17 +24,24 @@ const topAtletas = (() => {
   });
   return topA;
 })();
+// array de atletas top de oro
 const usuarios = topAtletas.map((indice) => atletas2016[indice]);
 const main = document.getElementsByTagName('main')[0];
+// mostrando la data en html
 main.appendChild(cartaHTML(usuarios));
 // obtener id de los elementos mostrados
 const obtenerUsuarios = () => {
+  // array de id
   const elementosId = [];
+  // array de numero (valor) de id
   const resultado = [];
   const articles = document.getElementsByTagName('article');
+  // crea array de articles
   Array.from(articles).forEach((element) => {
+    // obtener valor del atributo
     elementosId.push(element.getAttribute('id'));
   });
+  // recorre array de numeros de id
   elementosId.forEach((numero) => {
     atletas2016.forEach((atleta) => {
       if (atleta.id === parseInt(numero)) {
@@ -45,14 +54,18 @@ const obtenerUsuarios = () => {
 // funcionalidad boton ordenar
 const selector = document.querySelector('#ordenador');
 selector.addEventListener('change', (event) => {
+  // Id de los atletas
   const usuariosMostrados = obtenerUsuarios();
   main.innerHTML = '';
+  // ordena según opcion que elija usuario
   ordenar(usuariosMostrados, event.target.value);
   main.appendChild(cartaHTML(usuariosMostrados));
 });
 // Lista de países en select
 const listaPaisesRepetidos = atletas2016.map((paises) => paises.team);
+// lista de países sin repetir
 const listaPaises = listaPaisesRepetidos.filter((elemento, indice, array) =>
+  // indice de elemento
   array.indexOf(elemento) === indice);
 const selectPais = document.querySelector('#paises');
 const paisesSelect = () => {
@@ -71,23 +84,24 @@ selectPais.addEventListener('change', (event) => {
   main.innerHTML = '';
   main.appendChild(cartaHTML(resultado));
 });
-// Lista de diciplinas en select
+// Lista de diciplinas
 const listaDisciplinasArr = atletas2016.map((atleta) =>
   (atleta.disciplinas));
 const listaDisciplinasFuncion = () => {
   const result = [];
   listaDisciplinasArr.forEach((arr) => {
     arr.forEach((obj) => {
+      // en array interno, key disciplina
       result.push(obj.disciplina);
     });
   });
   return result;
 };
+// lista disciplinas en select
 const listaDisciplinasRepetidas = listaDisciplinasFuncion();
 const listaDisciplinas = listaDisciplinasRepetidas.filter(
     (elemento, indice, array) =>
       (array.indexOf(elemento) === indice));
-// funcionalidad select disciplinas
 const selectDisciplina = document.querySelector('#disciplinas');
 const disciplinas = () => {
   const disciplinasOrdenadas = listaDisciplinas.sort();
@@ -99,6 +113,7 @@ const disciplinas = () => {
   });
 };
 disciplinas();
+// funcionalidad select disciplinas
 selectDisciplina.addEventListener('change', (event) => {
   const resultado = filtroData(atletas2016, 'disciplinas', event.target.value);
   main.innerHTML = '';
@@ -113,38 +128,25 @@ botonesMedalla.forEach((boton) => {
     main.appendChild(cartaHTML(resultado));
   });
 });
-// const botonesMedalla = document.getElementsByName('medalla');
-// botonesMedalla.forEach((boton) => {
-//   boton.addEventListener('click', () => {
-//     if (selectDisciplina.value ===
-//       'Disciplinas' && selectPais.value === 'Paises') {
-//       const resultado = filtroData(atletas2016, 'medalla', boton.value);
-//       main.innerHTML= '';
-//       main.appendChild(cartaHTML(resultado));
-//     } else {
-//       const usuariosMostrados = obtenerUsuarios();
-//       const resultado = filtroData(
-//           usuariosMostrados, 'medalla', boton.value);
-//       main.innerHTML= '';
-//       main.appendChild(cartaHTML(resultado));
-//     }
-//   });
-// });
+// funcionalidad del buscador
 const nombreAtletas = atletas2016.map((atleta) => (atleta.name));
 const inputBuscar = document.getElementById('search');
 const buscador = document.getElementById('searcher');
 buscador.addEventListener('click', () => {
   const resultado = atletas2016.filter((atleta) =>
+    // array en minuscula
     (atleta.name.toLowerCase() == inputBuscar.value.toLowerCase()));
   main.innerHTML = '';
   main.appendChild(cartaHTML(resultado));
 });
-// `[${resultado}]`
+// coincidencias en buscador
 const divCoincidencias = document.getElementById('coincidencias');
 inputBuscar.addEventListener('keyup', () => {
   let matches = nombreAtletas.filter((nombre) => {
     divCoincidencias.innerHTML = '';
+    // encontrar coincidencias(string, global, insensitive)
     const regex = new RegExp(`^${inputBuscar.value}`, 'gi');
+    // busca coincidencia en string y devuelve array con info
     return nombre.match(regex);
   });
   if (inputBuscar.value.length === 0) {
@@ -164,9 +166,10 @@ inputBuscar.addEventListener('keyup', () => {
     });
   }
 });
-// grafico de barras
+// funcion de estadistica
 const estadisticas = estadistica(atletas2016, 'Gold', listaPaises);
 const ctx = document.getElementById('myChart').getContext('2d');
+// grafico de barras
 // eslint-disable-next-line no-unused-vars
 const myChart = new Chart(ctx, {
   type: 'bar',
@@ -202,6 +205,7 @@ const myChart = new Chart(ctx, {
     },
   },
 });
+
 const boton = document.querySelector('#botonMenu');
 const mostrarMenu = () => {
   const menu = document.querySelector('#contenidoMenu');
@@ -213,6 +217,7 @@ const mostrarMenu = () => {
     menu.classList.add('ocultar-menu');
   }
 };
+// mostrar y ocultar gráfico de barras
 boton.addEventListener('click', mostrarMenu);
 const botongrafico = document.getElementById('botongrafico');
 const contenedorGrafico = document.getElementById('contenedorgrafico');
@@ -225,6 +230,7 @@ cerrargrafico.addEventListener('click', () => {
   contenedorGrafico.classList.add('graficoclass');
   contenedorGrafico.classList.remove('graficostyle');
 });
+// mostrar y ocultar boton
 const contenidoMenu = document.getElementById('contenidoMenu');
 const botonMenu = document.getElementById('botonMenu');
 botonMenu.addEventListener('click', () => {
